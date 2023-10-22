@@ -4,8 +4,6 @@ This is provided on an AS-IS basis, and is not a substitute for any commercial o
 The resulting file is a non-proprietory DMG file that can be subsequently analysed using the examiner's preferred tool or method.
 It remains the sole responsibility of the user to verify and validate this tool to ensure that the impact and limitations of this tool is understood prior to use.
 
-For any feedback/ enquiries, please contact Hello[at]hiddenbytes.co.uk.
-
 # **Prerequisite**
 - The password for an administrator account on the suspect (target) device.
 - Suitably sized destination media to store acquired image
@@ -92,3 +90,7 @@ _Note: The name of the tool will be subject to change. If you are not sure of th
         Hash.txt - This is a hash output of the DMG file and the summary file
 
 12) The resulting DMG can now be imported into the examiner's tool of choice.
+
+# Feedback / Questions
+
+For any feedback/ enquiries, please contact Hello[at]hiddenbytes.co.uk.
