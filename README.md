@@ -1,7 +1,7 @@
 # Introduction
 Macquire (**MAC**intoshOS A**quire**) is an experimental tool created at HiddenBytes to perform a logical acquisition from a live MacOS system. 
 This is provided on an AS-IS basis, and is not a substitute for any commercial offerings.
-The resulting file is a non-proprietory DMG file that can be subsequently analysed using the examiner's preferred tool or method.
+The resulting file is a non-proprietary DMG file that can be subsequently analysed using the examiner's preferred tool or method.
 It remains the sole responsibility of the user to verify and validate this tool to ensure that the impact and limitations of this tool is understood prior to use.
 
 # **Prerequisite**
@@ -13,7 +13,7 @@ It remains the sole responsibility of the user to verify and validate this tool 
 The preperation is split into before the scene (ie: performed on an examiner's device), and on scene (performed on the subject's device). 
 
 ## Phase 1: Prepare the destination media
-_This should be performed from a known good device prior to attending the scene_
+_This should be performed from a known good device prior to attending the scene. **DO NOT PERFORM PHASE 1 ON THE SUSPECT'S DEVICE**_
 
 1) Prior to storing evidence onto the destination, the examiner should ensure no unrelated data is present. This can be achieved by sterilising the destination media.
    - Wiping with all sectors with 0x00s.
