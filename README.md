@@ -1,12 +1,12 @@
 # Introduction
 Macquire (**MAC**intoshOS A**quire**) is an experimental tool created at HiddenBytes to perform a logical acquisition from a live MacOS system. 
-This is provided on an AS-IS basis, and is not a substitute for any commercial offerings.
+This is provided on an "AS-IS" basis, and is not a substitute for any commercial offerings.
 The resulting file is a non-proprietary DMG file that can be subsequently analysed using the examiner's preferred tool or method.
 It remains the sole responsibility of the user to verify and validate this tool to ensure that the impact and limitations of this tool is understood prior to use.
 
-# **Prerequisite**
-- The password for an administrator account on the suspect (target) device.
-- Suitably sized destination media to store acquired image
+# **Prerequisites**
+- The password for an administrator account on the suspect (target) device
+- Suitably sized destination media to store acquired image.
    This should be a sterile SSD that is equal to, or larger than the capacity of the physical disk (for example, a 1TB Macbook Pro would require a destination disk of at least 1TB) 
 
 # **Instructions**
@@ -15,29 +15,29 @@ The preperation is split into before the scene (ie: performed on an examiner's d
 ## Phase 1: Prepare the destination media
 _This should be performed from a known good device prior to attending the scene. **DO NOT PERFORM PHASE 1 ON THE SUSPECT'S DEVICE**_
 
-1) Prior to storing evidence onto the destination, the examiner should ensure no unrelated data is present. This can be achieved by sterilising the destination media.
-   - Wiping with all sectors with 0x00s.
+1) Prior to storing evidence onto the destination volume, the examiner should ensure no unrelated data is present. This can be achieved by sterilising the destination media.
+   - Wipe all sectors with 0x00s
    - Verify the sterilisation of the media by performing a Checksum64 calculation on the media.
-     The expected checksum should be all 0s.
+     The expected checksum should be all 0s
 
      <img width="440" alt="image" src="https://github.com/hiddenbytes/macquire/assets/60643888/db721414-19a6-497a-b2e2-127513ea9948">
 
      
 2) Once verified, partition (format) the destination media with a MacOS native filesystem.
-   This can be performed using Apple's Disk Utility.
-   Disk Utility -> Right Click the elect the steriliased drive -> "Erase" 
-         HFS+ (Mac OS Extended (Journaled) is recommended as it is considered more robust than APFS and ExFAT, and ensures the Apple Extended Metadata information is retained.
-         It is recommended that the name of the destination volume is kept short, without any special characters (such as spaces)
+   This can be performed using the Apple Disk Utility.
+   Disk Utility -> Right Click the previously sterilised drive (from Step 1) -> "Erase" 
+         HFS+ (Mac OS Extended (Journaled)) is recommended as it is considered more robust than APFS and ExFAT, and ensures the Apple Extended Metadata information is retained.
+         It is recommended that the name of the destination volume is kept short, without any special characters (including spaces)
 
 
     <img width="487" alt="image" src="https://github.com/hiddenbytes/macquire/assets/60643888/fabd6cf3-e77d-407a-8d10-4ae88d839374">
 
 
-2) Copy the MacquireCLI script into the root folder of the newly partitioned drive.
+3) Copy the MacquireCLI script into the root folder of the newly partitioned volume.
 
-## Phase 2: Running Macquire at the scene
+## Phase 2: Running Macquire (At the scene)
 _The following steps are performed from the subject's device_
-Modifications will be made to the filesystem. Contemperaneous notes and adequate documentation should be performed throughout this phase.
+Modifications will be made to the filesystem. Contemperaneous notes and adequate documentation should be maintained.
 
 1) Grant "Terminal" with Full Disk Access.
     Click on the Apple icon in the top left of your menu bar -> Click "System Setings" -> Click "Privacy & Security".
@@ -49,7 +49,7 @@ Modifications will be made to the filesystem. Contemperaneous notes and adequate
    <img width="719" alt="image" src="https://github.com/hiddenbytes/macquire/assets/60643888/e77235dc-cb3d-4735-9cbb-5bddbd31ac23">
 
 
-3) Plug in the sterialised destination media created in Phase 1.
+3) Plug in the sterilised destination media created in Phase 1.
     On newer MacOS operating systems, you may be prompted to "Allow Accessory to Connect".
     Select Allow if prompted.
 
@@ -81,14 +81,16 @@ _Note: The name of the tool will be subject to change. If you are not sure of th
 
 9) Allow the tool to run. This process may take a while.
    
-10) When the tool has finished, a MD5 and SHA1 hash of the output will be shown on screen.
-    In addition, several new files will found on the destination drive, within a new folder called (Case Reference).
+10) When the tool has finished, a MD5 and SHA1 hash of the output will be shown on terminal.
+    In addition, several new files will be created on the destination drive within a new folder called (Case Reference).
     Within this folder will be the following:
         Snapshot folder - This is no longer required, and should be empty.
         (Case Reference).dmg - This is the read-only DMG file containing the logical acquisition
         (Case Reference)_Summary.txt - This is a summary of the acquisition, including timestamps
         Hash.txt - This is a hash output of the DMG file and the summary file
 
+11) Once the tool has finished (the terminal shows the MD5 and SHA1 hash of the output), you can close the terminal and eject the device
+    
 12) The resulting DMG can now be imported into the examiner's tool of choice.
 
 # Feedback / Questions
